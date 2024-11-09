@@ -78,3 +78,16 @@ After masking: 00000000 00000000 00000000 00000000 11111111 11111111 11111111 11
 Summary
 The masking operation (y & 0xFFFFFFFFL) ensures that when the 32-bit integer y is converted to a long, only the lower 32 bits of y are preserved, and the upper 32 bits are set to 0. This is crucial for correctly encoding the (x, y) coordinate pair into a single long value without interference from sign extension.
 
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Concept : Increasing number with maintaining bitwise and
+for eg: x = 101(binary)   => find next 10 number in increaing order by maintaining bitwise and of all number equals x.
+        x = 101 = 5
+ num1 =  x = start_number = 1010 0000 0000 0000 0000 ....
+ Approach to get next greater number
+ : add 1 to the previous number i.e, step1:  num2 = num1+1 = 5+1 = 6 = 110 (note its bitwise and with prev num is not equal to x)
+                                     step2: num2 = (num1+1) | x = 6|5 = 110 | 101 = 111 = 7 (this will be the second number)
+  Now repeat it till the nth number you can get.
+        
+
